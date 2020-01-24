@@ -54,32 +54,14 @@ quien_retweeteo = unlist(quien_retweeteo)
 # two column matrix of edges
 retweeter_edges = cbind(quien_retweeteo, quien_posteo)
 
-# generate graph
+# generate edge list
 rt_graph = graph.edgelist(retweeter_edges)
+
+colnames(retweeter_edges) <- c("Target", "Source")
+
+write.csv(retweeter_edges, file="retweeter-EDGES.csv", row.names=F)
 
 # get vertex names  
 ver_labs = get.vertex.attribute(rt_graph, "name", index=V(rt_graph))
 
-#PLOT THE GRAPH
-# choose some layout
-
-glay = layout_with_kk(rt_graph)
-
-# plot
-par(bg="white", mar=c(1,1,1,1))
-plot(rt_graph, layout=glay,
-     vertex.color="green",
-     vertex.size=10,
-     vertex.label=ver_labs,
-     vertex.label.family="sans",
-     vertex.shape="circle",
-     vertex.label.color=hsv(h=.165, s=.28, v=.08, alpha=1),
-     vertex.label.cex=0.85,
-     edge.arrow.size=0.8,
-     edge.arrow.width=0.5,
-     edge.width=3,
-     edge.color=hsv(h=0, s=1, v=1, alpha=1))
-# edge.color=("#408080")
-# add title
-title("nTweets on #AvionPresidencial : Quien retweeteo a quien",
-      cex.main=1, col.main="black")
+write.csv(ver_labs, file="retweeter-NODES.csv", row.names=F)
