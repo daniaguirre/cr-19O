@@ -46,22 +46,23 @@ for (i in 1:length(rt_patterns))
   quien_retweeteo[[i]] = rep(twit$getScreenName(), length(poster))
 }
 
-# and we put it off the list
+# convertimos a listas
 quien_posteo = unlist(quien_posteo)
 quien_retweeteo = unlist(quien_retweeteo)
 
-#GENERATE THE NETWORK GRAPH
-# two column matrix of edges
+# obtenemos la lista de enlaces
 retweeter_edges = cbind(quien_retweeteo, quien_posteo)
 
-# generate edge list
+# generamos un objeto de tipo grafo
 rt_graph = graph.edgelist(retweeter_edges)
 
+#renombramos las columnas de los enlace
 colnames(retweeter_edges) <- c("Target", "Source")
 
+#Creamos el archivo de enlaces
 write.csv(retweeter_edges, file="retweeter-EDGES.csv", row.names=F)
 
-# get vertex names  
+#Obtenemos las etiquetas de los nodos
 ver_labs = get.vertex.attribute(rt_graph, "name", index=V(rt_graph))
-
+#Creamos el archivo de nodos
 write.csv(ver_labs, file="retweeter-NODES.csv", row.names=F)
