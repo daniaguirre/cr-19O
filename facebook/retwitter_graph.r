@@ -3,10 +3,6 @@ library(stringr)
 library(igraph)
 
 #INFORMACION DE LA APP
-api_key <- "z5zA30mP0tnu6QxYZQKmAOYd2"
-api_secret <- "JTqIVp7oQOeo8oXhWuQWW8f9Z6dmxCihT19wLThIyB8keNQT0W"
-access_token <- "213082131-4jTcuzi93NGyLSwzC3mngA13R1lVWewhMIvR43nS"
-access_token_secret <- "97vnYbxo0pnJszhHXtn9aSc3VtkoAnOvbqMqcpptCUI7O"
 
 #AUTENTICACION
 setup_twitter_oauth(api_key,api_secret,access_token,access_token_secret)
