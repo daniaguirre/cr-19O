@@ -2,7 +2,7 @@ library(Rfacebook)
 
 oauth <- fbOAuth(app_id = "253004429005763",
                  
-                 app_secret = "42eb45da47f1390dfc1369e149ff2156",
+                 app_secret = "",
                  
                  extended_permissions = "public_profile,user_friends")
 
