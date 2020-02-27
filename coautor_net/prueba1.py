@@ -1,11 +1,12 @@
 import dblp
-autores = dblp.search('michael ley')
+autores = dblp.search('D. Aguirre-Guerrero')
+#Tamanio
 print autores.size
+#Tipo de objeto
 print autores.__class__
+#Contenido de los objetos
 print autores
+#Nombre de las columnas y tipo de objeto
 print autores.dtypes
-print autores.lin
-print autores_df.set_index('Authors',inplace=True)
-#michael = autores[0]
 #pint michael.name
 #print len(michael.publications)
