@@ -5,7 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/venv/lib/python2.7/site-packages/lxml-4.5.0-py2.7-linux-x86_64.egg" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 2.7" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 2.7 (coautor_net)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

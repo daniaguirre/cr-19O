@@ -8,5 +8,15 @@ print autores.__class__
 print autores
 #Nombre de las columnas y tipo de objeto
 print autores.dtypes
-#pint michael.name
-#print len(michael.publications)
+print autores['Authors']
+print autores['Link']
+print autores['Title']
+print autores['Type']
+print autores['Where']
+print autores['Year']
+
+coautores = autores['Authors']
+nombres = set()
+for coautor in coautores:
+    nombres.update(coautor)
+    print nombres
